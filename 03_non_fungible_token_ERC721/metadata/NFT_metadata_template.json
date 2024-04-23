@@ -1,7 +1,7 @@
 {
   "name": "SHIBA_INU",
   "description": "An adorable SHIBA_INU pup!",
-  "image": "https://ipfs.io/ipfs/bafybeiamkxijmpma2xjktr7t23ajotaneje52ecbzk2anw6nlsdmywptim/shiba-inu.png",
+  "image": "ipfs://Qmeke5Lo2SiuApSeVY8GwjZqkSKqTCJUiSniiuwMDsmSxn/shiba-inu.png",
   "attributes": [
     {
       "trait_type": "cuteness",

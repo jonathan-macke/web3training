@@ -8,8 +8,6 @@ contract DogNFT  is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    uint tokenCounter;
-
     constructor() ERC721("Dog NFT", "DOG"){
 
     }

@@ -1,5 +1,9 @@
 
 ## Getting Started
+
+**USE BRAVE BROWSER**: For an unknown reason, MetaMask is not allowed to be used in Chrome with Decathlon laptop. 
+
+
  Install crypto wallet on your browser if you don't have it
 * Open https://metamask.io/download/
 * Install Metamask extension

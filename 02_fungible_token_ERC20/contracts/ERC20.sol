@@ -1,18 +1,15 @@
-// SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-/**
- * @notice Implements a basic ERC20 staking token with incentive distribution.
- */
+contract GLDToken is ERC20 {
+    constructor(uint256 initialSupply) ERC20("Gold", "GLD") {
+        _mint(msg.sender, initialSupply);
+    }
 
-contract DktToken is ERC20, Ownable {
-    /**
-     * @notice The constructor for the Staking Token.
-     */
-    constructor(uint256 _supply) ERC20("DKT Token", "DKT") {
-        _mint(msg.sender, _supply * 1e18);
+    //override nb of decimals (default = 18)
+    function decimals() public view virtual override returns (uint8) {
+        return 2;
     }
 }
