@@ -6,28 +6,33 @@ contract exercice2 {
     mapping(address => uint256) balances;
     address owner;
 
-    //3. create transfer event
+    event TransferEvent(address _from, address _to, uint _amount);
 
     constructor(){
-        owner = msg.sender;
+       owner = msg.sender;
     }
 
-    //1. create modifier to check if caller is owner
+    //3. create modifier to check if caller is owner
+    modifier onlyOwner(){
+        require(msg.sender == owner, "only owner can invoke function");
+        _;
+    }
 
-    //2. adapt method so only owner can call it
-    function mintToken(address _receiver, uint256 _amount) external {
+    function mintToken(address _receiver, uint256 _amount) external onlyOwner {
         balances[_receiver] += _amount;
     }
 
     function transfer(address _receiver, uint256 _amount) external {
-        //4. check that sender has enough tokens
 
-        //5. send tokens to address - ie decrement balance for sender, increment balance for receiver
+        require(balances[msg.sender] >= _amount, "not enough balance");
 
-        //6. emit transfer event
+        balances[msg.sender] -= _amount;
+        balances[_receiver] += _amount;
+
+        emit TransferEvent(msg.sender, _receiver, _amount);
     }
 
-     function balance(address _address) public view returns (uint) {
-        //7. return the balance for the given address
-     }
+    function balance(address _address) public view returns (uint) {
+        return balances[_address];
+    }
 }
