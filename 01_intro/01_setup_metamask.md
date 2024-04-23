@@ -31,4 +31,3 @@ Perfect, now for test, you should select Ethereum test blockchain, please follow
 
 We will play with the testnets:
 * Sepolia testnet (ETH). Already in the list of testnet
-* Mumbai testnet (MATIC). Add Mumbai testnet to Metamask: https://www.datawallet.com/crypto/add-polygon-mumbai-to-metamask
